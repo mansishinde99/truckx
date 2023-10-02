@@ -37,11 +37,11 @@ const Owners = () => {
       <h1>Trusted by Owner Operators to Large Fleets</h1>
       <div className="content">
         <div className="imgs">
-            <Slide>
+            <Fade>
             {owners.map((owner, i)=> {
                 return <OWNERS key={i} ownerr={owner}/>
             })}
-            </Slide>
+            </Fade>
         </div>
       </div>
     </div>
