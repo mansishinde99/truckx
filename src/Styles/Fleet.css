@@ -1,0 +1,60 @@
+.fleet{
+text-align: center;
+margin: 2.5vw 0;
+}
+
+.fleet-head{
+color: #37546d;
+padding: 1vw;
+font-size: 3vw;
+}
+
+.fleet-text{
+    color: #354168;
+    font-size: 1.3vw;
+    font-weight: 300;
+    padding-bottom: 4vw;
+}
+
+.fleet iframe{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 99vh;
+}
+
+.fleet .dashcam{
+    text-align: left;
+    background-color: #434d6a;
+}
+
+.fleet .dashcam .textpart{
+    margin-left: 12vw;
+    color: #fff;
+}
+
+.fleet .dashcam .textpart h1{
+    padding: 1.5vw;
+}
+
+.fleet .dashcam .textpart p{
+    padding: .3vw 1.5vw;
+}
+
+.fleet .dashcam .warranty{
+    display: flex;
+    margin: 2vw 0 2vw 1vw;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.fleet .dashcam .learnmore-button{
+    color: #fff;
+    background-color: #1890ff;
+    border: 1px solid #1890ff;
+    border-radius: 2vw;
+    padding: 0.7vw 2vw;
+    margin-bottom: 1vw;
+    margin-left: 2vw;
+    font-weight: bold;
+}

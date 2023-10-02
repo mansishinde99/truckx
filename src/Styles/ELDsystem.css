@@ -1,0 +1,109 @@
+.eld-systems h1 {
+  text-align: center;
+  color: #344168;
+  margin-bottom: 1vw;
+  font-size: 2.9vw;
+}
+
+.bluetooth{
+    background-color: #F8F8F8;
+    display: flex;
+}
+
+.bluetooth img {
+  width: 38.5vw;
+  margin-left: 7.5vw;
+}
+
+.bt-text{
+    margin-left: 5vw;
+}
+
+.bt-text h2{
+color: #344168;
+font-size: 2.7vw;
+margin-top: 4vw;
+padding-bottom: 1.5vw;
+}
+
+.bt-text ul li{
+    list-style: none;
+    color: #6A78A3;
+    font-size: 15px;
+    padding-bottom: 1vw;
+}
+
+.bt-text p{
+    padding: .3vw 1vw 2vw;
+    color: #1990FF;
+    font-size: small;
+    font-weight: bold;
+}
+
+.learnmore-button{
+    color: #fff;
+    background-color: #1890ff;
+    border: 1px solid #1890ff;
+    border-radius: 2vw;
+    padding: 0.7vw 2vw;
+    margin-bottom: 1vw;
+    margin-left: 1vw;
+    font-weight: bold;
+}
+
+.wired{
+    display: flex;
+}
+
+.w-text{
+    margin-left: 15vw;
+}
+
+.w-text h2{
+    color: #344168;
+font-size: 2.7vw;
+margin-top: 4vw;
+padding-bottom: 1.5vw;
+}
+
+.w-text ul li{
+    list-style: none;
+    color: #6A78A3;
+    font-size: 15px;
+    padding-bottom: 1vw;
+}
+
+.w-text .warranty{
+    display: flex;
+    margin: 2vw 0 2vw 1vw;
+    font-weight: 500;
+    font-size: 14px;
+gap: 3vw;
+color: #1890ff;
+}
+
+.wired img{
+    width: 38vw;
+    margin-left: 14vw;
+}
+
+.advanced{
+    background-color: #F8F8F8;
+    padding-top: 3vw;
+}
+
+.advanced h1{
+    margin-bottom: 1.7vw;
+}
+
+.advanced p{
+    text-align: center;
+    color: #344168;
+    font-weight: 250;
+    margin-bottom: 2vw;
+}
+
+.advanced img{
+    width: 85%;
+    margin: 0 8vw
+}

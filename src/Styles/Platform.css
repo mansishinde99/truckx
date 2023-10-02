@@ -1,0 +1,72 @@
+.management {
+  background-color: rgb(141, 140, 140);
+  overflow: hidden;
+ height: 84.5vh;
+}
+
+.platform {
+  display: flex;
+  margin: 8vw 11vw;
+}
+
+.text-part .first {
+  font-size: 2vw;
+  margin: 0 0 1vw;
+  color: white;
+}
+
+.text-part .second {
+  width: 34vw;
+  font-size: 4vw;
+  font-weight: 600;
+  margin: 0 0 1vw;
+  line-height: 3.8vw;
+  color: white;
+}
+
+.text-part .third {
+  font-size: 1.3vw;
+  margin: 0 0 2vw;
+  color: white;
+}
+
+.order {
+  cursor: pointer;
+  margin: 0 0 1.5vw;
+  width: 12vw;
+  padding: 0.8vw;
+  border-radius: 22px;
+  color: white;
+  background-color: #1890ff;
+  border: 1px solid #1890ff;
+  font-size: 1.2vw;
+}
+
+.order:hover {
+  transform: scale(1.1);
+}
+
+.fourth {
+  color: white;
+  font-size: 1.2vw;
+  font-weight: 500;
+}
+
+.img-part {
+  display: grid;
+}
+
+.img-part .img1 {
+  width: 42vw;
+  height: 57vh;
+  left: 5vw;
+  top: -10vw;
+  position: relative;
+}
+
+.img-part .img2 {
+  width: 40vw;
+  top: 29vw;
+  position: absolute;
+  left: 50vw;
+}

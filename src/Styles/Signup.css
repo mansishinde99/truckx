@@ -1,0 +1,92 @@
+.signup {
+  padding: 0;
+  margin: 0;
+}
+
+nav {
+  background-color: rgba(246, 246, 246);
+}
+
+nav img {
+  margin: 1vw 6vw;
+  width: 10vw;
+}
+
+.titles{
+  margin: 0 6vw;
+}
+
+.titles .title {
+  margin-bottom: 1vw;
+  color: rgba(53,65,104);
+}
+
+.titles .subtitle {
+  font-size: 1.6vw;
+  font-weight: bold;
+  color: rgba(53,65,104);
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5vw 4vw;
+}
+
+.info-content{
+  margin: .5vw 2vw;
+}
+
+.details {
+  color: rgba(161,161,161);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.details span{
+    color: darkorange;
+}
+
+input {
+  width: 36rem;
+  height: 2.5rem;
+  font-size: 17px;
+  font-weight: 550;
+  color: rgba(53,67,101);
+  border: 1px solid rgba(161,161,161);
+  border-radius: 5px;
+  margin: 1vw 0;
+  padding: 0vw 1vw;
+  outline-width: 0;
+}
+
+/* input::-webkit-outer-spin-button, */
+input::-webkit-inner-spin-button 
+{
+    -webkit-appearance: none; 
+}
+
+.companyinfo h1{
+  color: rgba(53,65,104);
+  font-size: 1.8vw;
+  padding-bottom: 1vw;
+  margin: 0 6vw;
+}
+
+.next-button{
+  background-color: rgba(246, 246, 246);
+}
+
+.next-button button{
+  cursor: pointer;
+width: 13vw;
+padding: 1vw;
+float: right;
+margin: 0 6vw 1vw 0;
+background-color: #1890ff;
+color: white;
+font-size: 18px;
+font-weight: bold;
+border: none;
+border-radius: 25px;
+}

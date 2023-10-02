@@ -1,0 +1,166 @@
+.login-page {
+  display: flex;
+  width: 100vw;
+  height: 101vh;
+}
+
+.left-side {
+  background-color: rgba(53, 63, 107);
+  width: 50%;
+}
+
+.left-content {
+  margin: 4vw 6.5vw;
+}
+
+.text-part{
+    margin-bottom: -2.10vw;
+}
+
+.text-part .first {
+  font-size: 45px;
+  font-weight: 700;
+  color: white;
+  width: 25vw;
+  margin: 0 0 -18px 0;
+}
+
+.text-part .second {
+  color: white;
+  font-size: 1.2vw;
+  font-weight: 700;
+}
+
+.mobile-img {
+  width: 28vw;
+}
+
+.x-img {
+    width: 14vw;
+    right: 50vw;
+    position: absolute;
+    bottom: -4px;
+    height: 18vw;
+}
+
+.right-side {
+  width: 50%;
+  background-color: rgb(255, 255, 255);
+}
+
+.right-content{
+    margin: 4.5vw;
+    border: 1px solid #d5ddf3;
+    padding: 2.5vw;
+    border-radius: 27px;
+}
+
+.right-content .title{
+    margin-top: 1vw;
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 1vw;
+}
+
+.right-content .sub-title{
+    font-size: 18px;
+    color: rgba(117,128,156);
+    margin-bottom: 3vw;
+}
+
+.right-content .email{
+    font-size: 15px;
+    font-weight: 600;
+    color: rgba(117,128,156);
+    margin-bottom: 1vw;
+}
+
+.right-content .email-input{
+    margin-bottom: 2vw;
+    border: none;
+    border-bottom: 0.5px solid rgba(117,128,156);
+    width: 28vw;
+    height: 2vw;
+    font-size: 16px;
+    outline-width: 0;
+}
+
+.right-content .email span{
+    color: darkorange;
+}
+
+.right-content .password{
+    font-size: 15px;
+    font-weight: 600;
+    color: rgba(117,128,156);
+    margin-bottom: 1vw;
+}
+
+.right-content .password-input{
+    margin-bottom: 3vw;
+    border: none;
+    border-bottom: 0.5px solid rgba(117,128,156);
+    width: 28vw;
+    height: 2vw;
+    font-size: 16px;
+    outline-width: 0;
+}
+
+.right-content .password span{
+    color: darkorange;
+}
+
+.right-content .option{
+    display: flex;
+    justify-content: space-between;
+}
+
+.right-content .option .forgot{
+    font-size: 15px;
+    font-weight: 600;
+    color: rgba(117,128,156);
+    margin-top: 0.8vw;
+    cursor: pointer;
+    height: 1.5vw;
+}
+
+.right-content .option .forgot:hover{
+    color: #1890ff;
+}
+
+.right-content .option button{
+    background-color: #1890ff;
+    color: white;
+    width: 13vw;
+    border: none;
+    padding: 0.8vw 1vw;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.noacc{
+    font-size: 1vw;
+    margin-top: 2vw;
+    text-align: center;
+}
+
+.noacc button{
+    border: none;
+}
+
+.noacc button a{
+    background-color: #fff;
+    font-size: 1vw;
+    cursor: pointer;
+    color: #1890ff;
+    text-decoration: none;
+}
+
+.loginsupport{
+display: flex;
+justify-content: center;
+margin-top: 3vw;
+font-size: 14px;
+color: #1890ff;
+}
