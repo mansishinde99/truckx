@@ -1,43 +1,49 @@
-.owners{
+.image-slider{
     margin: 4vw 10vw;
 }
 
-.owners h1{
+.image-slider h1{
     text-align: center;
     color: #344168;
+    font-size: 3vw;
 }
 
-.owners .content{
+.image-slider .owners{
     display: flex;
-    margin-top: 5vw;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
-.owners .content .imgs{
+.image-slider .owners button{
+ color: gray;
+ border: none;
+ background-color: #fff;
+ width: 15vw;
+}
+
+.owners .slide .text{
+    width: 71vw;
+    margin: 4vw 0;
+    font-size: 1.8vw;
+    font-weight: 300;
+}
+
+.image-slider .owners .slide img{
     display: flex;
     gap: 10vw;
+    width: 15vw;
+    height: 30vh;
+    border-radius: 0.6vw;
+    margin: 5vw 0 1vw 28vw;
 }
 
-.owners .content .arrows{
- color: gray;
+.image-slider .owners .slide .name {
+    font-weight: bold;
+    font-size: 1.8vw;
 }
 
-.owners .content .imgs img{
-    width: 16vw;
-    height: 36vh;
-    border-radius: 5px;
-}
-
-.cont .text{
-    width: 50vw;
-}
-
-.react-slideshow-wrapper {
-    width: 2vw;
-}
-
-.nav {
-    border: 1px solid black;
-    background-color: #fff;
-    border: none;
-    width: 0vw;
+.image-slider .owners .slide .bs{
+    color: rgb(173, 170, 170);
+    font-weight: 200;
 }

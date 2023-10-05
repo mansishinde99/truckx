@@ -10,7 +10,7 @@ const Navbar = () => {
           <div className="navLogo">
             <a href="/"><img src="https://truckx.com/wp-content/uploads/2019/08/pure-blue-logo.png" /></a>
           </div>
-          <li className="productline">
+          <li>
             <a className="product" href="#products">
               Products
               <KeyboardArrowDownIcon style={{ marginBottom: "-7px" }} />
