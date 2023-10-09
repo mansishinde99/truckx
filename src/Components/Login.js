@@ -1,17 +1,45 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../Styles/Login.css";
+import data from "../datas.json"
 
 const Login = () => {
   const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(e);
-    console.log(email)
+  const user = {
+    email: "mansi@gmail.com",
+    password: "Mansi"
   };
+  const navigate = useNavigate();
+  
+  const submitThis = (e) => {
+    e.preventDefault();
+    
+    if (email == user.email && password == user.password) {
+      console.log("User Logged In");
+      navigate("/dashboard");
+      // alert("Logged In Successfully");
+    } else if (email !== user.email) {
+      console.log("Please check your email");
+      alert("Please check your email");
+    } else {
+      console.log("Wrong password");
+      alert("Wrong Password");
+    }
+  };
+
+  // const submitThis = (e) => {
+  //   console.log(e);
+  //   console.log(email);
+  //   console.log(pass)
+  // };
+ 
   return (
     <div className="login-page">
+
+{/* LEFT SIDE */}
+
       <div className="left-side">
         <div className="left-content">
           <div className="text-part">
@@ -31,15 +59,14 @@ const Login = () => {
         </div>
       </div>
 
+{/* RIGHT SIDE */}
+
       <div className="right-side">
         <div className="right-content">
-          <img
-            className="logo"
-            src="https://web.truckx.com/static/media/login-logo.bddbb82a.svg"
-          />
+          <img className="logo" src="https://web.truckx.com/static/media/login-logo.bddbb82a.svg"/>
           <p className="title">Welcome to TruckX</p>
           <p className="sub-title">Sign in to your Admin Account</p>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={submitThis}>
             <p className="email">
               Email address <span>*</span>
             </p>
@@ -53,8 +80,8 @@ const Login = () => {
               Password <span>*</span>
             </p>
             <input
-              value={pass}
-              onChange={(e) => setPass(e.target.value)}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="password-input"
               type="password"
             ></input>
@@ -63,7 +90,10 @@ const Login = () => {
               <p value={email} className="forgot">
                 Forgot Password ?
               </p>
-              <button type="submit" className="signin">
+              <button
+                type="submit"
+                className="signin"
+              >
                 Sign In
               </button>
             </div>
@@ -71,7 +101,9 @@ const Login = () => {
           <p className="noacc">
             Don’t have an account ?{" "}
             <button className="signup">
-              <a href="/signup" target="_self">Sign Up Here</a>
+              <a href="/signup" target="_self">
+                Sign Up Here
+              </a>
             </button>
           </p>
           <a className="loginsupport" href="/loginsupport">
@@ -83,5 +115,5 @@ const Login = () => {
   );
 };
 
-export default Login;
 
+export default Login;
