@@ -18,7 +18,7 @@ const Login = () => {
     
     if (email == user.email && password == user.password) {
       console.log("User Logged In");
-      navigate("/dashboard");
+      navigate("/Dashboard");
       // alert("Logged In Successfully");
     } else if (email !== user.email) {
       console.log("Please check your email");
