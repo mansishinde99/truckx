@@ -1,49 +1,44 @@
-.image-slider{
-    margin: 4vw 10vw;
+.image-slider {
+  margin: 4vw 0;
 }
 
-.image-slider h1{
-    text-align: center;
-    color: #344168;
-    font-size: 3vw;
+.image-slider h1 {
+  text-align: center;
+  color: #344168;
+  word-spacing: 2px;
+  font-size: 2.8vw;
+  padding-bottom: 5vw;
 }
 
-.image-slider .owners{
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
+.slide-content {
 }
 
-.image-slider .owners button{
- color: gray;
- border: none;
- background-color: #fff;
- width: 15vw;
+.slide-content .text {
+  text-align: center;
+  font-size: 1.8vw;
+  font-weight: 200;
+  margin: 0 4vw;
 }
 
-.owners .slide .text{
-    width: 71vw;
-    margin: 4vw 0;
-    font-size: 1.8vw;
-    font-weight: 300;
+.slick-slide img {
+  display: block;
+  width: 16vw;
+  height: 16vw;
+  border-radius: 0.6vw;
+  margin: 2vw 29vw;
 }
 
-.image-slider .owners .slide img{
-    display: flex;
-    gap: 10vw;
-    width: 15vw;
-    height: 30vh;
-    border-radius: 0.6vw;
-    margin: 5vw 0 1vw 28vw;
+.slide-content .name {
+  text-align: center;
+  font-size: 2vw;
+  font-weight: bold;
 }
 
-.image-slider .owners .slide .name {
-    font-weight: bold;
-    font-size: 1.8vw;
+.slide-content .bs {
+  text-align: center;
+  color: #E1E1E1;
 }
 
-.image-slider .owners .slide .bs{
-    color: rgb(173, 170, 170);
-    font-weight: 200;
+.image-slider .slick-dots {
+  background-color: #fff;
 }

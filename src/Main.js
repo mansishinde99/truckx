@@ -54,7 +54,7 @@ const images = [
       <Platform/>
       <Fleet/>
       <Tracker/>
-      <ELDsystem/>
+      <ELDsystem/>  
       <Owners slides={slides}/>
       <Companies/>
       <Recognized images={images}/>

@@ -1,30 +1,62 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../Styles/Login.css";
-
+// http://localhost:3001/users
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const user = {
-    email: "mansi@gmail.com",
-    password: "Mansi"
-  };
   const navigate = useNavigate();
-  
+  const [users, setUsers] = useState("");
+
+  // const users = [
+  //   {
+  //     id: "1",
+  //     email: "mansi@gmail.com",
+  //     password: "Mansi",
+  //   },
+  //   {
+  //     id: "2",
+  //     email: "shinde@gmail.com",
+  //     password: "Shinde",
+  //   },
+  // ];
+
+  useEffect(() => {
+    fetch("http://localhost:3002/users")
+      .then((resp) => resp.json())
+      .then((data) => {
+        setUsers(data);
+        console.log(data);
+      });
+  }, []);
+
+
   const submitThis = (e) => {
     e.preventDefault();
-    
-    if (email == user.email && password == user.password) {
-      console.log("User Logged In");
-      navigate("/Dashboard");
-      // alert("Logged In Successfully");
-    } else if (email !== user.email) {
-      console.log("Please check your email");
-      alert("Please check your email");
-    } else {
-      console.log("Wrong password");
-      alert("Wrong Password");
+
+    let logging = false;
+
+    users.map((user) => {
+      if (email == user.email && password == user.password) {
+        logging = true;
+        console.log("User Logged In");
+        navigate("/Dashboard");
+      } 
+      // else if (email == user.email) {
+      //   alert("Please check your emailId");
+      // } else {
+      //   alert("Wrong Pass");
+      // }
+    });
+
+    if (!logging) {
+      if (users.every((user) => email != user.email)) {
+        console.log("Please check your email");
+        alert("Please check your email");
+      } else {
+        console.log("Wrong password");
+        alert("Wrong Password");
+      }
     }
   };
 
@@ -33,11 +65,10 @@ const Login = () => {
   //   console.log(email);
   //   console.log(pass)
   // };
- 
+
   return (
     <div className="login-page">
-
-{/* LEFT SIDE */}
+      {/* LEFT SIDE */}
 
       <div className="left-side">
         <div className="left-content">
@@ -58,11 +89,14 @@ const Login = () => {
         </div>
       </div>
 
-{/* RIGHT SIDE */}
+      {/* RIGHT SIDE */}
 
       <div className="right-side">
         <div className="right-content">
-          <img className="logo" src="https://web.truckx.com/static/media/login-logo.bddbb82a.svg"/>
+          <img
+            className="logo"
+            src="https://web.truckx.com/static/media/login-logo.bddbb82a.svg"
+          />
           <p className="title">Welcome to TruckX</p>
           <p className="sub-title">Sign in to your Admin Account</p>
           <form onSubmit={submitThis}>
@@ -89,10 +123,7 @@ const Login = () => {
               <p value={email} className="forgot">
                 Forgot Password ?
               </p>
-              <button
-                type="submit"
-                className="signin"
-              >
+              <button type="submit" className="signin">
                 Sign In
               </button>
             </div>
@@ -113,6 +144,5 @@ const Login = () => {
     </div>
   );
 };
-
 
 export default Login;
