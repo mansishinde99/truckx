@@ -10,6 +10,10 @@
   padding-bottom: 5vw;
 }
 
+.image-slider .slick-slider{
+  background-color: #fff;
+}
+
 .slide-content {
 }
 
@@ -20,7 +24,7 @@
   margin: 0 4vw;
 }
 
-.slick-slide img {
+.slick-slide .ownerimg {
   display: block;
   width: 16vw;
   height: 16vw;

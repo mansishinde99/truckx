@@ -23,7 +23,7 @@ const Owners = ({ slides }) => {
         {slides.map((slide, i) => (
             <div className="slide-content" key={i}>
               <p className="text">"{slide.text}"</p>
-              <img src={slide.img}/>
+              <img className='ownerimg' src={slide.img}/>
               <p className="name">{slide.name}</p>
               <p className="bs">{slide.bs}</p>
             </div>

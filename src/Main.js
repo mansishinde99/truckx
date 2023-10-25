@@ -47,6 +47,14 @@ const images = [
     "https://truckx.com/wp-content/uploads/2019/08/we-covered-by-copy-4.png",
 ];
 
+const companies = [
+  "https://truckx.com/wp-content/uploads/2019/08/TruckX-Customer-Silicon-Roadway.png",
+  "https://truckx.com/wp-content/uploads/2019/08/TruckX-Customer-Eagle.png",
+  "https://truckx.com/wp-content/uploads/2019/08/TruckX-Customer-BRAR.png",
+  "https://truckx.com/wp-content/uploads/2019/08/TruckX-Customer-BESTBUY.png",
+  "https://truckx.com/wp-content/uploads/2019/08/TruckX-Customer-NE.png",
+];
+
 
   return (
     <div>
@@ -56,7 +64,7 @@ const images = [
       <Tracker/>
       <ELDsystem/>  
       <Owners slides={slides}/>
-      <Companies/>
+      <Companies companies={companies}/>
       <Recognized images={images}/>
       <Trust/>
     </div>

@@ -22,7 +22,7 @@ const Login = () => {
   // ];
 
   useEffect(() => {
-    fetch("http://localhost:3002/users")
+    fetch("http://localhost:3001/users")
       .then((resp) => resp.json())
       .then((data) => {
         setUsers(data);

@@ -11,13 +11,16 @@
    padding-bottom: 3vw;
 }
 
-.companies-images{
-    margin: 0 6vw;
+.slick-slider {
+    margin: 0 12vw;
+    background-color: #F8F8F8;
 }
 
-.companies-images img{
-width: 14vw;
-padding-right: 2vw;
+.slick-slide img{
+    margin: 0 6vw;
+    width: 10vw;
+    height: 10vw;
+    padding-right: 2vw;
 }
 
 .tune{
@@ -41,9 +44,9 @@ border-radius: 5px;
 .slick-slider {
 margin: 0 12vw;
 }
-
-.recognized-img{
-    width: 20vw;
+.slick-slide .recognized-img{
+    width: 15vw;
+    height: 7vw;
 }
 
 .slick-dots{
