@@ -60,6 +60,12 @@
   gap: 1vw;
 }
 
+.dashboard nav .right .img-text {
+  display: flex;
+  gap: 1vw;
+  cursor: pointer;
+}
+
 .dashboard nav .right .truck-img {
   width: 3.5vw;
   height: 3.5vw;
@@ -67,10 +73,49 @@
   margin: 0;
 }
 
-.dashboard nav .right .hash {
+.dashboard nav .right .img-text .hash {
   cursor: pointer;
   align-content: center;
   display: grid;
+}
+
+.dashboard nav .right .img-text:hover .dropdown-content {
+  display: block;
+}
+
+.dashboard nav .right .img-text .dropdown-content{
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  margin-top: 3.5vw;
+  border-radius: 1vw 0;
+  width: 13vw;
+}
+
+.dashboard nav .right .img-text .dropdown-content .dropdown-imgtext{
+  display: flex;
+}
+
+.dashboard nav .right .img-text .dropdown-content .dropdown-imgtext img{
+  width: 1.3vw;
+  margin: 0 0.5vw;
+}
+
+.dashboard nav .right .img-text .dropdown-content .dropdown-imgtext a{
+  float: none;
+  color: #5A657F;
+  font-size: smaller;
+  padding: 8px 0;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dashboard nav .right .img-text .dropdown-content .dropdown-imgtext a :hover{
+  display: block;
 }
 
 .dashboard nav .right .hash .demo-company {
@@ -145,6 +190,7 @@
   grid-column-start: 2;
   background-color: #f5f9fe;
   padding: 2vw;
+  height: 42vh;
 }
 
 .graph-section .top{
@@ -172,6 +218,32 @@
 
 .graph-section .top .live-button img{
 padding-right: .5vw;
+}
+
+.graph-section .first-flex{
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2vw;
+}
+
+.graph-section .first-flex .fleet{
+  border: .5px solid rgba(255,255,255,var(--tw-border-opacity));
+  border-radius: 0.9vw;
+  text-align: start;
+  padding: 1vw;
+  font-size: 1vw;
+  font-weight: bold;
+  color: #5A657F;
+  background-color: #fff;
+  box-shadow: var(--tw-ring-offset-shadow,0 0 transparent),var(--tw-ring-shadow,0 0 transparent),var(--tw-shadow)!important;
+  --tw-shadow: 0px 4px 35px 0px rgba(147,158,185,0.12)!important;
+  width: 25vw;
+  height: 28vh;
+  cursor: pointer;
+}
+
+.graph-section .first-flex :hover{
+  border: .5px solid #1990ff;
 }
 
 

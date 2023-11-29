@@ -57,7 +57,7 @@ const companies = [
 
 
   return (
-    <div>
+   <div>
       <Navbar/>
       <Platform/>
       <Fleet/>

@@ -16,6 +16,12 @@ font-size: 3vw;
     padding-bottom: 4vw;
 }
 
+.fleet .widget-container{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1vw 2vw 6vw;
+}
+
 .fleet iframe{
     margin: 0;
     padding: 0;
