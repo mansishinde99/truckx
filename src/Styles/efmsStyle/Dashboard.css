@@ -144,7 +144,7 @@
   cursor: pointer;
   width: 10vw;
   height: 2vw;
-}
+} 
 
 .menu-section .logon:hover {
   background-color: #f5f9fe;
@@ -164,12 +164,26 @@
   color: #5A657F;
 }
 
+.menu-section .logon ul li:hover{
+  color: #1990ff;
+}
+
 .menu-section .logon .plus{
   color: #5A657F;
 }
 
-.menu-section ul li svg {
+.menu-section .logon svg:hover {
   color: #1990ff;
+}
+
+.dropdown ul li{
+  padding-bottom: 1vw;
+  padding-left: 1vw;
+}
+
+.dropdown ul li a{
+  text-decoration: none;
+  color: #5A657F;
 }
 
 .menu-section ul .dashs {
