@@ -1,7 +1,7 @@
 .management {
   background-color: rgb(141, 140, 140);
   overflow: hidden;
- height: 84.5vh;
+  height: 83vh;
 }
 
 .platform {
@@ -65,8 +65,8 @@
 }
 
 .img-part .img2 {
-  width: 40vw;
-  top: 29vw;
+  width: 42vw;
+  top: 31vw;
   position: absolute;
   left: 50vw;
 }

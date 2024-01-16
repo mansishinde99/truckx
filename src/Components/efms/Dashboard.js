@@ -3,19 +3,29 @@ import "../../Styles/efmsStyle/Dashboard.css";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 const Dashboard = () => {
-  const [open, setOpen] = useState();
-  const [selected, setSelected] = useState();
+  const [openHOS, setOpenHOS] = useState(false);
+  const [openDriver, setOpenDriver] = useState(false);
+  const [selected, setSelected] = useState(null);
 
-  const handleOpen = () => {
-    setOpen(!open);
-  };
+  // const handleOpen = () => {
+  //   setOpen(!open);
+  // };
 
   const onItemClick = (item) => {
-    setSelected(item === selected ? null : item);
+    if (item === selected) {
+      setSelected(null);
+      setOpenHOS(false);
+      setOpenDriver(false);
+    } else {
+      setSelected(item);
+      setOpenHOS(item === 'HOS');
+      setOpenDriver(item === 'Drivers');
+    }
   };
 
+
   return (
-    <div className="dashboard">
+    <div className="dashboard"> 
       <nav>
         <div className="left">
           <img
@@ -36,7 +46,7 @@ const Dashboard = () => {
           <div className="img-text">
             <img
               className="truck-img"
-              src="https://truckx-user-documents-prod.s3.amazonaws.com/LOGO/2337c898-08e2-42d0-bdf3-4c6d86cd1319.jpeg?AWSAccessKeyId=AKIA43DKKALOCGHHKOES&Signature=QSBAyQXTyMyEm5uTXsS21qNulRw%3D&Expires=1701324456"
+              src="https://truckx-user-documents-prod.s3.amazonaws.com/LOGO/f6ac68a4-8b07-41f2-b9ad-c01dac371b7b.png?AWSAccessKeyId=AKIA43DKKALOCGHHKOES&Signature=pEf7vpV8lT0Ve4lx9Y35xpLm%2FZs%3D&Expires=1705298907"
             />
             <div className="hash">
               <p className="demo-company">Demo Company</p>
@@ -88,7 +98,7 @@ const Dashboard = () => {
             </svg>
             <li className="dash">Dashboard</li>
           </div>
-          <div className="logon">
+          <div className="logon" onClick={() => onItemClick('HOS')}>
             <svg width="16" height="17" viewBox="0 0 16 17" fill="none">
               <path
                 d="M6.00004 15.1666H10C13.3334 15.1666 14.6667 13.8333 14.6667 10.4999V6.49992C14.6667 3.16659 13.3334 1.83325 10 1.83325H6.00004C2.66671 1.83325 1.33337 3.16659 1.33337 6.49992V10.4999C1.33337 13.8333 2.66671 15.1666 6.00004 15.1666Z"
@@ -105,11 +115,40 @@ const Dashboard = () => {
                 stroke-linejoin="round"
               ></path>
             </svg>
-            <li>HOS</li>
+            <li style={{color: openHOS ? "#1990ff" : "#5A657F",
+            fontWeight: openHOS ? "600" : "400"}}>HOS</li>
             <p className="plus" style={{ paddingLeft: "5vw" }}>
               +
             </p>
           </div>
+          {openHOS ? (
+            <div className="dropdown">
+              <ul>
+                <li
+                  onClick={() => onItemClick("drivers")}
+                  style={{ fontWeight: selected === "drivers" ? "600" : null }}
+                >
+                  <a href="/driversForm">Log Book</a>
+                </li>
+                <li
+                  onClick={() => onItemClick("deletesDrivers")}
+                  style={{
+                    fontWeight: selected === "deletesDrivers" ? "600" : null,
+                  }}
+                >
+                  <a href="#">Unassigned Drive</a>
+                </li>
+                <li
+                  onClick={() => onItemClick("deletesDrivers")}
+                  style={{
+                    fontWeight: selected === "deletesDrivers" ? "600" : null,
+                  }}
+                >
+                  <a href="#">Diagnostic and Malfunction Events</a>
+                </li>
+              </ul>
+            </div>
+          ) : null}
           <div className="logon">
             <svg width="16" height="17" viewBox="0 0 16 17" fill="none">
               <path
@@ -320,7 +359,7 @@ const Dashboard = () => {
               +
             </p>
           </div>
-          <div className="logon" onClick={() => {handleOpen()}}>
+          <div className="logon" onClick={() => onItemClick('Drivers')}>
             <svg width="16" height="17" viewBox="0 0 16 17" fill="none">
               <path
                 d="M6.10671 7.74658C6.04004 7.73992 5.96004 7.73992 5.88671 7.74658C4.30004 7.69325 3.04004 6.39325 3.04004 4.79325C3.04004 3.15992 4.36004 1.83325 6.00004 1.83325C7.63337 1.83325 8.96004 3.15992 8.96004 4.79325C8.95337 6.39325 7.69337 7.69325 6.10671 7.74658Z"
@@ -352,20 +391,20 @@ const Dashboard = () => {
               ></path>
             </svg>
             <li 
-            style={{color: open ? "#1990ff" : "#5A657F",
-            fontWeight: open ? "600" : "400"}}>Drivers</li>
+            style={{color: openDriver ? "#1990ff" : "#5A657F",
+            fontWeight: openDriver ? "600" : "400"}}>Drivers</li>
             <p className="plus" style={{ paddingLeft: "3.6vw" }}>
               +
             </p>
           </div>
-          {open ? (
+          {openDriver ? (
             <div className="dropdown">
               <ul>
                 <li
                   onClick={() => onItemClick("drivers")}
                   style={{ fontWeight: selected === "drivers" ? "600" : null }}
                 >
-                  <a href="/driversForm">Drivers</a>
+                  <a href="/driversForm" target="_self">Drivers</a>
                 </li>
                 <li
                   onClick={() => onItemClick("deletesDrivers")}
@@ -375,7 +414,6 @@ const Dashboard = () => {
                 >
                   <a href="#">Deletes Drivers</a>
                 </li>
-                {/* Add more list items as needed */}
               </ul>
             </div>
           ) : null}

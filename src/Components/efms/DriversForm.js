@@ -2,17 +2,19 @@ import React, { useState } from "react";
 import "../../Styles/efmsStyle/DriversForm.css";
 
 const DriversForm = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [submittedData, setSubmittedData] = useState();
 
   const openForm = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     setIsOpen(true);
+    document.body.classList.add("blur");
   };
 
   const closeForm = (e) => {
     e.preventDefault();
     setIsOpen(false);
+    document.body.classList.remove("blur");
   };
 
   const submitForm = (e) => {
@@ -35,15 +37,9 @@ const DriversForm = () => {
     e.target.elements.cell.value = "";
     e.target.elements.license.value = "";
 
-    const data = {
-      firstName,
-      lastName,
-      email,
-      cell,
-      license,
-    };
+    const newData = {firstName,lastName,email,cell,license};
 
-    setSubmittedData(data);
+    setSubmittedData(...submittedData, newData);
 
   };
 
@@ -52,6 +48,9 @@ const DriversForm = () => {
       <button className="add-drivers" onClick={(e) => openForm(e)}>
         + Add Drivers
       </button>
+
+      <div className={isOpen ? "blur-background" : ""}></div>
+
       {isOpen && (
         <div className="form-popup">
           <form onSubmit={submitForm}>
