@@ -1,35 +1,49 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import "../Styles/Login.css";
 // http://localhost:3001/users
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
-  const [users, setUsers] = useState("");
+  // const [users, setUsers] = useState("");        /* if using api */
 
-  // const users = [
-  //   {
-  //     id: "1",
-  //     email: "mansi@gmail.com",
-  //     password: "Mansi",
-  //   },
-  //   {
-  //     id: "2",
-  //     email: "shinde@gmail.com",
-  //     password: "Shinde",
-  //   },
-  // ];
+  const navigate = useNavigate();  
+
+  const users = [
+    {
+      id: "1",
+      email: "mansi@gmail.com",
+      password: "Mansi",
+    },
+    {
+      id: "2",
+      email: "shinde@gmail.com",
+      password: "Shinde",
+    },
+  ]; /* demo users data */
+
+
+{/* IF USING API */}
+  // useEffect(() => {
+  //   fetch("http://localhost:3001/users")
+  //     .then((resp) => resp.json())
+  //     .then((data) => {
+  //       setUsers(data);
+  //       console.log(data);
+  //     });
+  // }, []);   /* empty dependency array means it runs once after the initial render */
+
 
   useEffect(() => {
-    fetch("http://localhost:3001/users")
-      .then((resp) => resp.json())
-      .then((data) => {
-        setUsers(data);
-        console.log(data);
-      });
-  }, []);
+    document.title = "Truckx Login";
+    /* title will set when the component will mount */
 
+    return () => {
+      document.title = "Welcome to TruckX | Fleet Management & ELD solution";
+      /* title will be reset once the component will unmount */
+    };
+  }, []);
+  /*The empty dependency means the effect runs only on mount */
 
   const submitThis = (e) => {
     e.preventDefault();
@@ -39,23 +53,18 @@ const Login = () => {
     users.map((user) => {
       if (email == user.email && password == user.password) {
         logging = true;
-        console.log("User Logged In");
-        navigate("/Dashboard");
-      } 
-      // else if (email == user.email) {
-      //   alert("Please check your emailId");
-      // } else {
-      //   alert("Wrong Pass");
-      // }
+        navigate("/emfs/Dashboard");
+        // console.log("User Logged In");
+      }
     });
 
     if (!logging) {
       if (users.every((user) => email != user.email)) {
-        console.log("Please check your email");
         alert("Please check your email");
+        // console.log("Please check your email");
       } else {
-        console.log("Wrong password");
         alert("Wrong Password");
+        // console.log("Wrong password");
       }
     }
   };
