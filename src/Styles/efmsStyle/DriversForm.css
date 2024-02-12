@@ -27,7 +27,7 @@ form {
   border: 1px solid #ccc;
   z-index: 1000;
   border-radius: 1vw;
-  margin: 1vw 16vw;
+  margin: 1vw;
 }
 
 .popup .blur-background {
@@ -97,4 +97,17 @@ form .cancel-button {
   font-size: 1.2vw;
   font-weight: 600;
   cursor: pointer;
+}
+
+.submitted-data{
+  float: right;
+  margin-right: 4vw;
+  margin-top: 18vw;
+}
+
+.submitted-data .data{
+  border: 1px solid gray;
+  margin: 1vw;
+  padding: 1vw;
+height: 12vw;
 }
