@@ -1,84 +1,83 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../Styles/Login.css";
-// http://localhost:3001/users
+
+const users = [
+  {
+    id: "1",
+    email: "mansi@gmail.com",
+    password: "Mansi",
+  },
+  {
+    id: "2",
+    email: "shinde@gmail.com",
+    password: "Shinde",
+  },
+]; /* demo users data */
+
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  // const [users, setUsers] = useState("");        /* if using api */
-
-  const navigate = useNavigate();  
-
-  const users = [
-    {
-      id: "1",
-      email: "mansi@gmail.com",
-      password: "Mansi",
-    },
-    {
-      id: "2",
-      email: "shinde@gmail.com",
-      password: "Shinde",
-    },
-  ]; /* demo users data */
-
-
-{/* IF USING API */}
-  // useEffect(() => {
-  //   fetch("http://localhost:3001/users")
-  //     .then((resp) => resp.json())
-  //     .then((data) => {
-  //       setUsers(data);
-  //       console.log(data);
-  //     });
-  // }, []);   /* empty dependency array means it runs once after the initial render */
-
+  const initialValues = { email: "", password: "" };
+  const [formValues, setFormValues] = useState(initialValues);
+  const [formErrors, setFormErrors] = useState({});
+  // const [isSubmit, setIsSubmit] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.title = "Truckx Login";
-    /* title will set when the component will mount */
-
     return () => {
       document.title = "Welcome to TruckX | Fleet Management & ELD solution";
-      /* title will be reset once the component will unmount */
     };
   }, []);
-  /*The empty dependency means the effect runs only on mount */
 
-  const submitThis = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-
-    let logging = false;
+    setFormErrors(validation(formValues));
+    // setIsSubmit(true);
 
     users.map((user) => {
-      if (email == user.email && password == user.password) {
-        logging = true;
-        navigate("/emfs/Dashboard");
-        // console.log("User Logged In");
+      if (
+        formValues.email == user.email &&
+        formValues.password == user.password
+      ) {
+        navigate("/efms/Dashboard2");
       }
     });
-
-    if (!logging) {
-      if (users.every((user) => email != user.email)) {
-        alert("Please check your email");
-        // console.log("Please check your email");
-      } else {
-        alert("Wrong Password");
-        // console.log("Wrong password");
-      }
-    }
   };
 
-  // const submitThis = (e) => {
-  //   console.log(e);
-  //   console.log(email);
-  //   console.log(pass)
-  // };
+  useEffect(() => {
+    console.log(formErrors);
+    // if (Object.keys(formErrors).length === 0 && isSubmit) {
+    //   console.log(formValues)
+    // }
+  }, [formErrors]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormValues({ ...formValues, [name]: value });
+    setFormErrors({ ...formErrors, [name]: "" });
+  };
+
+  const validation = (values, users) => {
+    const errors = {};
+
+    if (!values.email) {
+      errors.email = "Email is required";
+    }  else if (!users || !users.map((user) => user.email === values.email)) {
+      errors.email = "Invalid Email";
+    }
+
+
+    if (!values.password) {
+      errors.password = "Password is required";
+    } else if (!users || !users.map((user) => user.password === values.password)){
+      errors.password = "Invalid Password";
+    }
+
+    return errors;
+  };
 
   return (
     <div className="login-page">
-      {/* LEFT SIDE */}
-
       <div className="left-side">
         <div className="left-content">
           <div className="text-part">
@@ -98,40 +97,48 @@ const Login = () => {
         </div>
       </div>
 
-      {/* RIGHT SIDE */}
-
       <div className="right-side">
         <div className="right-content">
           <img
             className="logo"
             src="https://web.truckx.com/static/media/login-logo.bddbb82a.svg"
+            alt="TruckX Logo"
           />
           <p className="title">Welcome to TruckX</p>
           <p className="sub-title">Sign in to your Admin Account</p>
-          <form onSubmit={submitThis}>
+          <form onSubmit={handleSubmit}>
             <p className="email">
               Email address <span>*</span>
             </p>
             <input
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={formValues.email}
+              onChange={handleChange}
+              name="email"
               className="email-input"
               type="email"
-            ></input>
+            />
+            {formErrors.email && (
+              <p style={{ color: "red", fontSize: ".9vw" }} className="error">
+                {formErrors.email}
+              </p>
+            )}
             <p className="password">
               Password <span>*</span>
             </p>
             <input
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              value={formValues.password}
+              onChange={handleChange}
+              name="password"
               className="password-input"
               type="password"
-            ></input>
-
-            <div className="option">
-              <p value={email} className="forgot">
-                Forgot Password ?
+            />
+            {formErrors.password && (
+              <p style={{ color: "red", fontSize: ".9vw" }} className="error">
+                {formErrors.password}
               </p>
+            )}
+            <div className="option">
+              <p className="forgot">Forgot Password ?</p>
               <button type="submit" className="signin">
                 Sign In
               </button>
