@@ -12,7 +12,7 @@ const Platform = () => {
           <p className="second">Fleet Management IoT & ELD Platform</p>
           <p className="third">ELD | Dashcam | Asset Tracking | Sensors</p>
           <button className="order">Order Online</button>
-          <div>
+          <div className="trusted">
             <span>
               <StarIcon style={{margin:"0 8px -5px 0", color:"white"}} />
             </span>

@@ -14,9 +14,6 @@
   background-color: #fff;
 }
 
-.slide-content {
-}
-
 .slide-content .text {
   text-align: center;
   font-size: 1.8vw;
@@ -45,4 +42,45 @@
 
 .image-slider .slick-dots {
   background-color: #fff;
+}
+
+@media (max-width: 767px){
+  .image-slider h1 {
+    text-align: center;
+    color: #344168;
+    word-spacing: 2px;
+    font-size: 8vw;
+    padding-bottom: 5vw;
+  }
+
+  .image-slider .slick-slider {
+    margin: 0 2vw;
+}
+
+  .slide-content .text {
+    text-align: center;
+    font-size: 4.5vw;
+    font-weight: 200;
+    /* margin: 0 2vw; */
+  }
+
+  .slick-slide .ownerimg {
+    display: block;
+    width: 50vw;
+    height: 55vw;
+    border-radius: 0.6vw;
+    margin: 2vw 26vw;
+  }
+
+  .slide-content .name {
+    text-align: center;
+    font-size: 5vw;
+    font-weight: bold;
+  }
+
+  .slide-content .bs {
+    text-align: center;
+    color: #E1E1E1;
+    font-size: 3.5vw;
+  }
 }

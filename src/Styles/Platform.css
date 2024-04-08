@@ -9,13 +9,13 @@
   margin: 8vw 11vw;
 }
 
-.text-part .first {
+.platform .text-part .first {
   font-size: 2vw;
   margin: 0 0 1vw;
   color: white;
 }
 
-.text-part .second {
+.platform  .text-part .second {
   width: 34vw;
   font-size: 4vw;
   font-weight: 600;
@@ -24,7 +24,7 @@
   color: white;
 }
 
-.text-part .third {
+.platform  .text-part .third {
   font-size: 1.3vw;
   margin: 0 0 2vw;
   color: white;
@@ -69,4 +69,87 @@
   top: 31vw;
   position: absolute;
   left: 50vw;
+}
+
+@media (max-width: 767px)
+{
+  .management {
+    background-color: rgb(141, 140, 140);
+    overflow: hidden;
+    height: 85vh;
+  }
+
+  .platform{
+    margin: 1vw;
+    display: block;
+    width: 100%;
+  }
+
+  .platform .text-part .first {
+    font-size: 4vw;
+    font-weight: 400;
+    color: white;
+    width: 100%;
+    margin: 2vw 0;
+    text-align: center;
+}
+
+.platform .text-part .second {
+  color: white;
+    font-size: 10vw;
+    font-weight: 700;
+    margin: -1vw 7vw;
+    text-align: center;
+    width: 90%;
+    line-height: 12vw;  
+}
+
+.platform  .text-part .third {
+  font-size: 3vw;
+    font-weight: 600;
+    margin: 2vw 2vw;
+    color: white;
+    text-align: center;
+}
+
+.order {
+  cursor: pointer;
+    margin: 2vw 22vw;
+    width: 55%;
+    padding: 3vw 7vw;
+    border-radius: 22px;
+    color: white;
+  background-color: #1890ff;
+  border: 1px solid #1890ff;
+  font-size: 4vw;
+  font-weight: 600;
+  top: 138vw;
+  position: absolute;
+} 
+
+.trusted{
+  margin: 2vw 17vw;
+  position: absolute;
+  top: 150vw;
+}
+
+.fourth {
+  color: white;
+    font-size: 4vw;
+    font-weight: 700;
+}
+
+.img-part .img1 {
+  width: 120%;
+  height: 100%;
+  left: -16vw;
+  top: -10vw;
+}
+
+.img-part .img2 {
+  width: 80%;
+  top: 108vw;
+  position: absolute;
+  left: 10vw;
+}
 }

@@ -22,3 +22,31 @@
     letter-spacing: 0.3vw;
     padding-bottom: 5vw;
 }
+
+@media (max-width:767px){
+    .trust{
+        margin: 16vw;
+        margin-bottom: 1vw;
+        text-align: center;
+    }
+
+    .trust .text{
+        font-size: 4.8vw;
+        font-weight: 200;
+        letter-spacing: 0.3vw;
+        padding: 1vw 0;
+    }
+
+    .trust h1{
+        font-size: 7vw;
+        color: #1990FF;
+        padding-bottom: 1vw;
+    }
+
+    .trust .text2 {
+        font-size: 5vw;
+        font-weight: 300;
+        letter-spacing: 0.3vw;
+        padding-bottom: 5vw;
+    }
+}

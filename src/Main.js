@@ -59,14 +59,14 @@ const companies = [
   return (
    <div>
       <Navbar/>
-      {/* <Platform/>
-      <Fleet/>
+       <Platform/>
+     <Fleet/>
       <Tracker/>
       <ELDsystem/>  
       <Owners slides={slides}/>
       <Companies companies={companies}/>
       <Recognized images={images}/>
-      <Trust/> */}
+      <Trust/>
     </div>
   )
 }

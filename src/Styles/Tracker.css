@@ -30,7 +30,7 @@
   display: flex;
 }
 
-.sensors .text-button .text {
+.sensors .text-button .texts {
   font-size: 35px;
   margin-bottom: 0.5vw;
   /* color: rgb(80, 77, 77); */
@@ -66,18 +66,17 @@
 }
 
 .sensors .text-button .texts :nth-child(1) {
-    color: #735e8f;
-  }
-  .sensors .text-button .texts :nth-child(2) {
-    color: #5693B2;
-  }
-  .sensors .text-button .texts :nth-child(3) {
-    color: #59898C;
-  }
-  .sensors .text-button .texts :nth-child(4) {
-    color: #7b947b;
-  }
-  
+  color: #735e8f;
+}
+.sensors .text-button .texts :nth-child(2) {
+  color: #5693b2;
+}
+.sensors .text-button .texts :nth-child(3) {
+  color: #59898c;
+}
+.sensors .text-button .texts :nth-child(4) {
+  color: #7b947b;
+}
 
 .sensors .text-button .buttonlm:nth-child(1) {
   background: #dbc6fb;
@@ -96,4 +95,61 @@
   border: 2px solid #7b947b;
 }
 
+@media (max-width: 767px) {
+  .TrackersnSensors {
+    margin: 3vw ;
+    width: 91%;
+  }
 
+  .TrackersnSensors h1 {
+    text-align: center;
+    margin-bottom: 1vw;
+    color: rgba(53, 65, 104);
+    font-size: 7.5vw;
+  }
+
+  .trackers {
+    display: block;
+    width: 100%;
+  }
+
+  .sensors {
+    cursor: pointer;
+    width: 100%;
+    border-radius: 20px;
+    margin: 7vw 0;
+    padding: 1.5vw;
+}
+
+.sensors img {
+  width: 100%;
+  margin-bottom: 3vw;
+}
+
+.text-button {
+  display: block;
+  text-align: center;
+}
+
+.sensors .text-button .text{
+  font-size: 5vw;
+  margin-bottom: 2vw; 
+
+}
+
+.sensors .subtext {
+  font-size: 3.5vw;
+  margin-bottom: 2vw;
+}
+
+.sensors .buttonlm {
+  border: 2.5px solid;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-left: 1.5vw;
+  width: 34vw;
+  height: 40px;
+  margin: 2vw;
+  font-weight: 600;
+}
+}

@@ -6,11 +6,11 @@
 .nav {
   background-color: #121212;
   width: 100%;
-  height: 24vh;
+  height: 12vh;
 }
 
 .navLogo {
-  margin: 0 16vw 0 10vw;
+  margin: 0 16vw 0 8vw;
   cursor: pointer;
 }
 
@@ -33,10 +33,6 @@
 .navContent ul li:hover {
   border-bottom: 3px solid #1890ff;
   box-sizing: border-box;
-}
-
-.navContent ul .productline {
-  /* border-bottom: 2.5px solid #1890ff; */
 }
 
 .navContent ul .dropdown-container{
@@ -112,10 +108,10 @@ text-align: left;
   border: 2px solid white;
   background-color: transparent;
   border-radius: 2vw;
-  margin: 25px 0;
+  margin: 20px 0;
   padding: 0 2px;
   width: 6vw;
-  height: 9vh;
+  height: 5vh;
   font-weight: 500;
   font-size: 15px;
 }
@@ -133,21 +129,21 @@ text-decoration: none;
   display: none;
 }
 
-@media (min-width: 350px) and (max-width: 767px){
+@media  (max-width: 350px) and (max-width: 767px){
   .nav {
     background-color: #121212;
     width: 100%;
-    height: 15vh;
+    height: 10vh;
 }
 
 .navLogo {
-  margin: 0 1vw;
+  margin: 2vw;
   cursor: pointer;
 }
 
 .navLogo img {
   margin: 1vw;
-  width: 22vw;
+  width: 20vw;
 }
 
 .dropdown-container{
@@ -161,7 +157,7 @@ text-decoration: none;
 .menuIcon{
   display: block;
   color: white;
-  margin-left: 58vw;
+  margin-left: 61vw;
   align-content: center;
   cursor: pointer;
 }
