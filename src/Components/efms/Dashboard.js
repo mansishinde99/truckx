@@ -1,38 +1,61 @@
 import React, { useState } from "react";
 import "../../Styles/efmsStyle/Dashboard.css";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import Login from "../Login";
+
+let users = [
+  {
+    id: "1",
+    email: "mansi@gmail.com",
+    password: "Mansi",
+  },
+  {
+    id: "2",
+    email: "shinde@gmail.com",
+    password: "Shinde",
+  },
+]; /* demo users data */
 
 const Dashboard = () => {
   const [openHOS, setOpenHOS] = useState(false);
+  const [openLocation, setOpenLocation] = useState(false);
+  const [openIFTA, setOpenIFTA] = useState(false);
+  const [openVehicles, setOpenVehicles] = useState(false);
   const [openDriver, setOpenDriver] = useState(false);
   const [selected, setSelected] = useState(null);
 
-  // const handleOpen = () => {
-  //   setOpen(!open);
-  // };
+  
 
   const onItemClick = (item) => {
     if (item === selected) {
       setSelected(null);
       setOpenHOS(false);
+      setOpenLocation(false);
+      setOpenIFTA(false);
+      setOpenVehicles(false);
       setOpenDriver(false);
     } else {
       setSelected(item);
-      setOpenHOS(item === 'HOS');
-      setOpenDriver(item === 'Drivers');
+      setOpenHOS(item === "HOS");
+      setOpenLocation(item === "Location");
+      setOpenIFTA(item === "IFTA");
+      setOpenVehicles(item === "Vehicles");
+      setOpenDriver(item === "Drivers");
     }
   };
 
+  
 
   return (
-    <div className="dashboard"> 
+    <div className="dashboard">
       <nav>
         <div className="left">
           <img
             className="logo"
             src="https://web.truckx.com/static/media/logo-blue.d1cfc0e5.png"
           />
-          <p className="dash-text">Dashboard</p>
+          {/* <Login email = {users.email}/> */}
+          <p className="dash-text">Dashboard </p>
         </div>
         <div className="right">
           <img
@@ -46,7 +69,7 @@ const Dashboard = () => {
           <div className="img-text">
             <img
               className="truck-img"
-              src="https://truckx-user-documents-prod.s3.amazonaws.com/LOGO/f6ac68a4-8b07-41f2-b9ad-c01dac371b7b.png?AWSAccessKeyId=AKIA43DKKALOCGHHKOES&Signature=pEf7vpV8lT0Ve4lx9Y35xpLm%2FZs%3D&Expires=1705298907"
+              src="https://truckx-user-documents-prod.s3.amazonaws.com/LOGO/0383fa0a-ce4b-4a80-83b7-a1d865580c9e.jpeg?AWSAccessKeyId=AKIA43DKKALOCGHHKOES&Signature=9apn%2BqJ8tuA1hbnegD6OytsW1Ns%3D&Expires=1711985668"
             />
             <div className="hash">
               <p className="demo-company">Demo Company</p>
@@ -98,8 +121,18 @@ const Dashboard = () => {
             </svg>
             <li className="dash">Dashboard</li>
           </div>
-          <div className="logon" onClick={() => onItemClick('HOS')}>
-            <svg width="16" height="17" viewBox="0 0 16 17" fill="none">
+
+          <div className="logon" onClick={() => onItemClick("HOS")}>
+            <svg
+              style={{
+                color: openHOS ? "#1990ff" : "#5A657F",
+                fontWeight: openHOS ? "600" : "400",
+              }}
+              width="16"
+              height="17"
+              viewBox="0 0 16 17"
+              fill="none"
+            >
               <path
                 d="M6.00004 15.1666H10C13.3334 15.1666 14.6667 13.8333 14.6667 10.4999V6.49992C14.6667 3.16659 13.3334 1.83325 10 1.83325H6.00004C2.66671 1.83325 1.33337 3.16659 1.33337 6.49992V10.4999C1.33337 13.8333 2.66671 15.1666 6.00004 15.1666Z"
                 stroke="#2B3244"
@@ -115,9 +148,22 @@ const Dashboard = () => {
                 stroke-linejoin="round"
               ></path>
             </svg>
-            <li style={{color: openHOS ? "#1990ff" : "#5A657F",
-            fontWeight: openHOS ? "600" : "400"}}>HOS</li>
-            <p className="plus" style={{ paddingLeft: "5vw" }}>
+            <li
+              style={{
+                color: openHOS ? "#1990ff" : "#5A657F",
+                fontWeight: openHOS ? "600" : "400",
+              }}
+            >
+              HOS
+            </li>
+            <p
+              className="plus"
+              style={{
+                color: openHOS ? "#1990ff" : "#5A657F",
+                fontWeight: openHOS ? "600" : "400",
+                paddingLeft: "5vw",
+              }}
+            >
               +
             </p>
           </div>
@@ -125,23 +171,20 @@ const Dashboard = () => {
             <div className="dropdown">
               <ul>
                 <li
-                  onClick={() => onItemClick("drivers")}
-                  style={{ fontWeight: selected === "drivers" ? "600" : null }}
+                  style={{ fontWeight: selected === "logbook" ? "600" : null }}
                 >
-                  <a href="/driversForm">Log Book</a>
+                  <a href="/logbook">Log Book</a>
                 </li>
                 <li
-                  onClick={() => onItemClick("deletesDrivers")}
                   style={{
-                    fontWeight: selected === "deletesDrivers" ? "600" : null,
+                    fontWeight: selected === "unassigned-drive" ? "600" : null,
                   }}
                 >
                   <a href="#">Unassigned Drive</a>
                 </li>
                 <li
-                  onClick={() => onItemClick("deletesDrivers")}
                   style={{
-                    fontWeight: selected === "deletesDrivers" ? "600" : null,
+                    fontWeight: selected === "DME" ? "600" : null,
                   }}
                 >
                   <a href="#">Diagnostic and Malfunction Events</a>
@@ -149,7 +192,8 @@ const Dashboard = () => {
               </ul>
             </div>
           ) : null}
-          <div className="logon">
+
+          <div className="logon" onClick={() => onItemClick("Location")}>
             <svg width="16" height="17" viewBox="0 0 16 17" fill="none">
               <path
                 d="M8.00004 9.45321C9.1488 9.45321 10.08 8.52197 10.08 7.37321C10.08 6.22446 9.1488 5.29321 8.00004 5.29321C6.85129 5.29321 5.92004 6.22446 5.92004 7.37321C5.92004 8.52197 6.85129 9.45321 8.00004 9.45321Z"
@@ -162,11 +206,53 @@ const Dashboard = () => {
                 stroke-width="1.5"
               ></path>
             </svg>
-            <li>Location</li>
-            <p className="plus" style={{ paddingLeft: "3vw" }}>
+            <li
+              style={{
+                color: openLocation ? "#1990ff" : "#5A657F",
+                fontWeight: openLocation ? "600" : "400",
+              }}
+            >
+              Location
+            </li>
+            <p
+              className="plus"
+              style={{
+                color: openLocation ? "#1990ff" : "#5A657F",
+                fontWeight: openLocation ? "600" : "400",
+                paddingLeft: "3vw",
+              }}
+            >
               +
             </p>
           </div>
+          {openLocation ? (
+            <div className="dropdown">
+              <ul>
+                <li
+                  style={{
+                    fontWeight: selected === "" ? "600" : null,
+                  }}
+                >
+                  <a href="asset">Asset</a>
+                </li>
+                <li
+                  style={{
+                    fontWeight: selected === "" ? "600" : null,
+                  }}
+                >
+                  <a href="asset">Tracking Links</a>
+                </li>
+                <li
+                  style={{
+                    fontWeight: selected === "" ? "600" : null,
+                  }}
+                >
+                  <a href="asset">Geofences</a>
+                </li>
+              </ul>
+            </div>
+          ) : null}
+
           <div className="logon">
             <svg width="16" height="17" viewBox="0 0 16 17" fill="none">
               <path
@@ -209,6 +295,7 @@ const Dashboard = () => {
             </svg>
             <li>Messages</li>
           </div>
+
           <div className="logon">
             <svg width="16" height="17" viewBox="0 0 16 17" fill="none">
               <path
@@ -235,6 +322,7 @@ const Dashboard = () => {
             </svg>
             <li>Dashcams</li>
           </div>
+
           <div className="logon">
             <svg width="16" height="17" viewBox="0 0 16 17" fill="none">
               <path
@@ -263,7 +351,8 @@ const Dashboard = () => {
             </svg>
             <li>Reports</li>
           </div>
-          <div className="logon">
+
+          <div className="logon" onClick={() => onItemClick("IFTA")}>
             <svg width="16" height="17" viewBox="0 0 16 17" fill="none">
               <path
                 d="M14.6666 4.49992V6.11325C14.6666 7.16658 14 7.83325 12.9466 7.83325H10.6666V3.17325C10.6666 2.43325 11.2733 1.83325 12.0133 1.83325C12.74 1.83992 13.4066 2.13325 13.8866 2.61325C14.3666 3.09992 14.6666 3.76659 14.6666 4.49992Z"
@@ -296,12 +385,39 @@ const Dashboard = () => {
                 stroke-linejoin="round"
               ></path>
             </svg>
-            <li>IFTA</li>
-            <p className="plus" style={{ paddingLeft: "5vw" }}>
+            <li
+              style={{
+                color: openIFTA ? "#1990ff" : "#5A657F",
+                fontWeight: openIFTA ? "600" : "400",
+              }}
+            >
+              IFTA
+            </li>
+            <p
+              className="plus"
+              style={{
+                color: openIFTA ? "#1990ff" : "#5A657F",
+                fontWeight: openIFTA ? "600" : "400",
+                paddingLeft: "5vw",
+              }}
+            >
               +
             </p>
           </div>
-          <div className="logon">
+          {openIFTA ? (
+            <div className="dropdown">
+              <ul>
+                <li style={{ fontWeight: selected === "" ? "600" : null }}>
+                  <a href="iftatrips">IFTA Trips</a>
+                </li>
+                <li style={{ fontWeight: selected === "" ? "600" : null }}>
+                  <a href="iftareports">IFTA Reports</a>
+                </li>
+              </ul>
+            </div>
+          ) : null}
+
+          <div className="logon" onClick={() => onItemClick("Vehicles")}>
             <svg width="16" height="17" viewBox="0 0 16 17" fill="none">
               <path
                 d="M10 1.83325V8.49992C10 9.23325 9.40004 9.83325 8.66671 9.83325H1.33337V5.57992C1.82004 6.15992 2.56673 6.51992 3.39339 6.49992C4.06673 6.48659 4.67338 6.22659 5.12671 5.79325C5.33338 5.61992 5.50672 5.39991 5.64006 5.15991C5.88006 4.75325 6.01337 4.27323 6.00004 3.77323C5.98004 2.99323 5.63338 2.30659 5.09338 1.83325H10Z"
@@ -354,12 +470,79 @@ const Dashboard = () => {
                 stroke-linejoin="round"
               ></path>
             </svg>
-            <li>Vehicles</li>
-            <p className="plus" style={{ paddingLeft: "3vw" }}>
-              +
-            </p>
+            <li style={{
+                color: openVehicles ? "#1990ff" : "#5A657F",
+                fontWeight: openVehicles ? "600" : "400",
+              }}
+            >
+              Vehicles
+            </li>
+            <p className="plus" style={{
+                color: openVehicles ? "#1990ff" : "#5A657F",
+                fontWeight: openVehicles ? "600" : "400",
+                paddingLeft: "3vw",
+              }}> + </p>
           </div>
-          <div className="logon" onClick={() => onItemClick('Drivers')}>
+          {openVehicles ? (
+            <div className="dropdown">
+              <ul>
+                <li>
+                  <a href="trucks">Trucks</a>
+                </li>
+                <li>
+                  <a href="trailers">Trailers</a>
+                </li>
+                <li>
+                  <a href="bike">Bike</a>
+                </li>
+                <li>
+                  <a href="locomotive">Locomotive</a>
+                </li>
+                <li>
+                  <a href="rv">RV</a>
+                </li>
+                <li>
+                  <a href="motorcycle">Motorcycle</a>
+                </li>
+                <li>
+                  <a href="forklift">Forklift</a>
+                </li>
+                <li>
+                  <a href="bulldozer">Bulldozer</a>
+                </li>
+                <li>
+                  <a href="other">Other</a>
+                </li>
+                <li>
+                  <a href="ambulance">Ambulance</a>
+                </li>
+                <li>
+                  <a href="plane">Plane</a>
+                </li>
+                <li>
+                  <a href="car">Car</a>
+                </li>
+                <li>
+                  <a href="bus">Bus</a>
+                </li>
+                <li>
+                  <a href="boat">Boat</a>
+                </li>
+                <li>
+                  <a href="van">Van</a>
+                </li>
+                <li>
+                  <a href="dumptruck">Dump Truck</a>
+                </li>
+                <li>
+                  <a href="cement-mixer">Cement Mixer</a>
+                </li>
+                <a style={{fontSize: "1vw", padding: "1vw", color: "#0B8AFF", textDecoration: "underline", cursor: "pointer"}}>+ Vehicle Type</a>
+              </ul>
+            </div>
+          ) : null}
+
+          <div className="logon" onClick={() => onItemClick("Drivers")}>
             <svg width="16" height="17" viewBox="0 0 16 17" fill="none">
               <path
                 d="M6.10671 7.74658C6.04004 7.73992 5.96004 7.73992 5.88671 7.74658C4.30004 7.69325 3.04004 6.39325 3.04004 4.79325C3.04004 3.15992 4.36004 1.83325 6.00004 1.83325C7.63337 1.83325 8.96004 3.15992 8.96004 4.79325C8.95337 6.39325 7.69337 7.69325 6.10671 7.74658Z"
@@ -390,9 +573,14 @@ const Dashboard = () => {
                 stroke-linejoin="round"
               ></path>
             </svg>
-            <li 
-            style={{color: openDriver ? "#1990ff" : "#5A657F",
-            fontWeight: openDriver ? "600" : "400"}}>Drivers</li>
+            <li
+              style={{
+                color: openDriver ? "#1990ff" : "#5A657F",
+                fontWeight: openDriver ? "600" : "400",
+              }}
+            >
+              Drivers
+            </li>
             <p className="plus" style={{ paddingLeft: "3.6vw" }}>
               +
             </p>
@@ -404,7 +592,9 @@ const Dashboard = () => {
                   onClick={() => onItemClick("drivers")}
                   style={{ fontWeight: selected === "drivers" ? "600" : null }}
                 >
-                  <a href="/driversForm" target="_self">Drivers</a>
+                  <a href="/driversForm" target="_self">
+                    Drivers
+                  </a>
                 </li>
                 <li
                   onClick={() => onItemClick("deletesDrivers")}
@@ -417,7 +607,7 @@ const Dashboard = () => {
               </ul>
             </div>
           ) : null}
-          
+
           <div className="logon">
             <svg width="16" height="17" viewBox="0 0 16 17" fill="none">
               <path
@@ -468,6 +658,8 @@ const Dashboard = () => {
               +
             </p>
           </div>
+
+          
           <div className="logon">
             <svg width="16" height="17" viewBox="0 0 16 17" fill="none">
               <g clip-path="url(#clip0_6235_481)">
@@ -505,6 +697,8 @@ const Dashboard = () => {
             </svg>
             <li>User Roles</li>
           </div>
+
+
           <div className="logon">
             <svg width="16" height="15" viewBox="0 0 16 15" fill="none">
               <path
@@ -537,6 +731,8 @@ const Dashboard = () => {
             </svg>
             <li>Terminals</li>
           </div>
+
+
           <div className="logon">
             <svg width="16" height="17" viewBox="0 0 16 17" fill="none">
               <path
@@ -573,6 +769,8 @@ const Dashboard = () => {
             </svg>
             <li>Workflows</li>
           </div>
+
+
           <div className="logon">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path
@@ -587,6 +785,8 @@ const Dashboard = () => {
             </svg>
             <li>Alerts</li>
           </div>
+
+
           <div className="logon">
             <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
               <path

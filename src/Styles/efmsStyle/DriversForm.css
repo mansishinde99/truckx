@@ -12,7 +12,7 @@
 
 .popup {
     position: relative;
-    background-color: rgb(214, 217, 219);
+    /* background-color: rgb(214, 217, 219); */
 }
 
 form {
@@ -34,18 +34,6 @@ form {
   display: block; 
 }
 
-.blur-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 999; 
-  display: none; 
-  /* backdrop-filter: blur(1px);  */
-  background-color: rgba(90,90,90,.5019607843137255)!important;
-}
-
 form .content {
   display: flex;
   justify-content: space-between;
@@ -58,6 +46,10 @@ form .content {
 
 .form-popup form .filling p {
   font-weight: 500;
+}
+
+.form-popup form .filling p .imp{
+  color: #F3747E;
 }
 
 .form-popup form .filling input {
@@ -100,14 +92,90 @@ form .cancel-button {
 }
 
 .submitted-data{
-  float: right;
-  margin-right: 4vw;
-  margin-top: 18vw;
+  float: left;
+    margin-right: 4vw;
+    margin-top: 2vw 
 }
 
-.submitted-data .data{
+.submitted-data{
+  width: 100%;
+}
+
+.inData h1{
+  padding: 0 5vw 3vw;
+}
+
+/* .submitted-data .data{
   border: 1px solid gray;
   margin: 1vw;
   padding: 1vw;
-height: 12vw;
+  height: 2vw;
+} */
+
+table {
+  /* display: block; */
+  overflow: hidden;
+  table-layout: auto;
+  border-collapse: collapse;
+  box-shadow: 2px 2px #ccc;
+  white-space: nowrap;
+  width: 100%;
+  max-width: 80%;
+  margin: auto;
+  overflow-x: auto;
+
+}
+
+thead{
+  background-color: #ccc;
+}
+
+table th{
+  padding: .2vw 1.5vw;
+}
+
+table td{
+  border-top: .1vw solid #ddd;
+  padding: 0vw 2vw;
+  text-align: center;
+}
+
+table tbody tr:hover{
+  cursor: pointer;
+  background-color: #eee;
+}
+
+.ed-buttons{
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1vw;
+}
+
+.edit-button{
+  background-color: transparent;
+  float: left;
+  margin: 1vw 0;
+  border: none;
+  border-radius: 0.5vw;
+  color: #485574;
+  font-size: 1vw;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.delete-button{
+  float: right;
+  margin: 1vw 0;
+  border: none;
+  border-radius: 0.5vw;
+  background-color: transparent;
+  color: rgb(235, 16, 16);
+  font-size: 1vw;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.delete-button:hover, .edit-button:hover{
+  transform: scale(1.2);
 }

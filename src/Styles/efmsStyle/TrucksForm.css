@@ -1,105 +1,12 @@
 .addTruckButton {
   background-color: #1990ff;
-  color: #fff;
+  color: white;
   border: none;
-  border-radius: 0.3vw;
-  width: 10vw;
-  margin: 1vw;
   padding: 1vw;
+  margin: 1vw;
+  cursor: pointer;
   font-size: 1vw;
   font-weight: 600;
-  cursor: pointer;
+  border-radius: 0.3vw;
 }
 
-.truckData{
-    font-size: 2vw;
-    margin-left: 1vw;
-}
-
-.truck-form form {
-  border: 1px solid #d6cfcf;
-  box-shadow: 5px 3px #d3d2d2;
-  border-radius: 1vw;
-  padding: 3vw;
-}
-
-.truck-form form .fillings {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1vw 5vw;
-}
-
-.truck-form form .fillings .truckDetails {
-  color: #807f7f;
-  font-weight: 600;
-}
-
-.truck-form form .fillings input {
-  font-size: 0.9vw;
-  width: 40vw;
-}
-
-.truck-form form .blue-buttons .submitButton {
-  float: right;
-  margin: 2vw;
-  padding: 1vw 3vw;
-  border: none;
-  border-radius: 0.5vw;
-  background-color: #1990ff;
-  color: white;
-  font-size: 1.2vw;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.truck-form form .blue-buttons .cancelButton {
-  float: left;
-  margin: 2vw;
-  padding: 1vw 3vw;
-  border: none;
-  border-radius: 0.5vw;
-  background-color: #1990ff;
-  color: white;
-  font-size: 1.2vw;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.blue-buttons .edit-button{
-    float: left;
-    margin: 2vw;
-    padding: 0.5vw 2vw;
-    border: none;
-    border-radius: 0.5vw;
-    background-color: #b7bdc4;
-    color: white;
-    font-size: 1vw;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.blue-buttons .delete-button{
-    float: right;
-    margin: 2vw;
-    padding: 0.5vw 2vw;
-    border: none;
-    border-radius: 0.5vw;
-    background-color: #b7bdc4;
-    color: white;
-    font-size: 1vw;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.truck-form .inData{
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.truck-form .displayedData {
-    display: grid;
-    border: 1px solid #b7b7b7;
-    border-radius: 1vw;
-    margin: 1vw;
-    padding: 1vw;
-}

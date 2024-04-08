@@ -31,18 +31,21 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFormErrors(validation(formValues));
-    // setIsSubmit(true);
+    const errors = validation(formValues);
+    setFormErrors(errors);
 
-    users.map((user) => {
-      if (
-        formValues.email == user.email &&
-        formValues.password == user.password
-      ) {
-        navigate("/efms/Dashboard2");
+    if (Object.keys(errors).length === 0) {
+      const user = users.some(
+        (user) => user.email === formValues.email && user.password === formValues.password
+      );
+      if (user) {
+        navigate("/efms/Dashboard2"); 
+      } else {
+        setFormErrors({ email: "Invalid credentials" });
       }
-    });
+    }
   };
+
 
   useEffect(() => {
     console.log(formErrors);
@@ -57,22 +60,12 @@ const Login = () => {
     setFormErrors({ ...formErrors, [name]: "" });
   };
 
-  const validation = (values, users) => {
+  const validation = (values) => {
     const errors = {};
 
-    if (!values.email) {
-      errors.email = "Email is required";
-    }  else if (!users || !users.map((user) => user.email === values.email)) {
-      errors.email = "Invalid Email";
+    if (!values.email || !values.password) {
+      errors.email = errors.password = "The required field is empty";
     }
-
-
-    if (!values.password) {
-      errors.password = "Password is required";
-    } else if (!users || !users.map((user) => user.password === values.password)){
-      errors.password = "Invalid Password";
-    }
-
     return errors;
   };
 
@@ -106,6 +99,13 @@ const Login = () => {
           />
           <p className="title">Welcome to TruckX</p>
           <p className="sub-title">Sign in to your Admin Account</p>
+
+          {formErrors.email && (
+              <p style={{ color: "red", fontSize: ".9vw", marginLeft:"1vw" }} className="error">
+                {formErrors.email}
+              </p>
+            )}
+
           <form onSubmit={handleSubmit}>
             <p className="email">
               Email address <span>*</span>
@@ -117,11 +117,11 @@ const Login = () => {
               className="email-input"
               type="email"
             />
-            {formErrors.email && (
+            {/* {formErrors.email && (
               <p style={{ color: "red", fontSize: ".9vw" }} className="error">
                 {formErrors.email}
               </p>
-            )}
+            )} */}
             <p className="password">
               Password <span>*</span>
             </p>
@@ -132,11 +132,11 @@ const Login = () => {
               className="password-input"
               type="password"
             />
-            {formErrors.password && (
+            {/* {formErrors.password && (
               <p style={{ color: "red", fontSize: ".9vw" }} className="error">
                 {formErrors.password}
               </p>
-            )}
+            )} */}
             <div className="option">
               <p className="forgot">Forgot Password ?</p>
               <button type="submit" className="signin">

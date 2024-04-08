@@ -1,0 +1,78 @@
+.device-form .add-devices {
+  background-color: #1990ff;
+  color: white;
+  border: none;
+  padding: 1vw;
+  margin: 1vw;
+  cursor: pointer;
+  font-size: 1vw;
+  font-weight: 600;
+  border-radius: 0.3vw;
+}
+
+.device-form form {
+  border: 1px solid #d6cfcf;
+  box-shadow: 5px 3px #d3d2d2;
+  border-radius: 1vw;
+  padding: 3vw;
+}
+
+.device-form form .fillings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1vw 5vw;
+}
+
+.device-form form .fillings .truckDetails {
+  color: #807f7f;
+  font-weight: 600;
+}
+
+.device-form form .fillings input {
+  font-size: 0.9vw;
+  width: 40vw;
+}
+
+.device-form form .blue-button {
+  gap: 70vw;
+  display: flex;
+}
+
+.device-form form .blue-buttons .submitButton {
+  float: right;
+  margin: 2vw;
+  padding: 1vw 3vw;
+  border: none;
+  border-radius: 0.5vw;
+  background-color: #1990ff;
+  color: white;
+  font-size: 1.2vw;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.device-form form .blue-buttons .cancelButton {
+  float: left;
+  margin: 2vw;
+  padding: 1vw 3vw;
+  border: none;
+  border-radius: 0.5vw;
+  background-color: #1990ff;
+  color: white;
+  font-size: 1.2vw;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submittedData {
+  float: right;
+  margin-right: 4vw;
+  margin-top: 18vw;
+}
+
+.submittedData .data {
+  border: 1px solid gray;
+  margin: 1vw;
+  padding: 1vw;
+  height: 12vw;
+}

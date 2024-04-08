@@ -1,11 +1,15 @@
 import "./App.css";
 import Main from "./Main";
 import Login from "./Components/Login";
-import Register from "./Components/Register";
 import Signup from "./Components/Signup";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./Components/efms/Dashboard";
+
+import Dashboard2 from "./Components/efms/Dashboard2";
 import DriversForm from "./Components/efms/DriversForm";
+import TrucksForm from "./Components/efms/TrucksForm";
+import DevicesForm from "./Components/efms/DevicesForm";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
 
@@ -16,8 +20,11 @@ function App() {
           <Route exact path="/" element={<Main />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/signup" element={<Signup/>} />
-          <Route exact path="/emfs/dashboard" element={<Dashboard/>}/>  
+          <Route exact path="/efms/dashboard" element={<Dashboard/>}/>  
+          <Route exact path="/efms/dashboard2" element={<Dashboard2/>}/>
           <Route exact path="/driversForm" element={<DriversForm/>}/>
+          <Route exact path="/trucksForm" element={<TrucksForm/>}/>
+          <Route exact path="/devicesForm" element={<DevicesForm/>}/>
         </Routes>
       </BrowserRouter>
     </div>

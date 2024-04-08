@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import "../Styles/Navbar.css";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import MenuIcon from "@mui/icons-material/Menu";
 
 const Navbar = () => {
   const [openedNav, setOpenedNav] = useState();
   const [openDrop, setOpenDrop] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const navDrop = () => {
     setOpenedNav(!openedNav);
@@ -18,6 +20,10 @@ const Navbar = () => {
   const closeDropdown = () => {
     setOpenDrop(null);
   };
+
+  const menuIcon = () => {
+    setMenuOpen(!menuOpen)
+  }
 
   return (
     <div className="nav">
@@ -36,16 +42,27 @@ const Navbar = () => {
             {/* {openedNav && ( */}
             <div className="dropdown-content">
               <a href="#cloudDashcam">Cloud Dashcam</a>
-              <a onMouseEnter={() => openDropdownOnHover("ELD")} onMouseLeave={closeDropdown}>
+              <a
+                onMouseEnter={() => openDropdownOnHover("ELD")}
+                onMouseLeave={closeDropdown}
+              >
                 ELD <KeyboardArrowRightIcon style={{ marginBottom: "-7px" }} />
               </a>
 
-              <a onMouseEnter={() => openDropdownOnHover("Asset Tracker")} onMouseLeave={closeDropdown}>
-                Asset Trackers <KeyboardArrowRightIcon style={{ marginBottom: "-7px" }} />
+              <a
+                onMouseEnter={() => openDropdownOnHover("Asset Tracker")}
+                onMouseLeave={closeDropdown}
+              >
+                Asset Trackers
+                <KeyboardArrowRightIcon style={{ marginBottom: "-7px" }} />
               </a>
 
-              <a onMouseEnter={() => openDropdownOnHover("IoT Sensors")} onMouseLeave={closeDropdown}>
-                IoT Sensors <KeyboardArrowRightIcon style={{ marginBottom: "-7px" }} />
+              <a
+                onMouseEnter={() => openDropdownOnHover("IoT Sensors")}
+                onMouseLeave={closeDropdown}
+              >
+                IoT Sensors{" "}
+                <KeyboardArrowRightIcon style={{ marginBottom: "-7px" }} />
               </a>
             </div>
 
@@ -67,7 +84,7 @@ const Navbar = () => {
                 <a href="#DoorSensors">Door Sensor</a>
               </div>
             )}
-             {/* )} */}
+            {/* )} */}
           </li>
           <li className="dropdown-container">
             <a>
@@ -98,6 +115,9 @@ const Navbar = () => {
               LOGIN
             </a>
           </button>
+          <div className="menuIcon" onClick={menuIcon}>
+            <MenuIcon />
+          </div>
         </ul>
       </div>
     </div>
