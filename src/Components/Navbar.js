@@ -3,11 +3,12 @@ import "../Styles/Navbar.css";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import MenuIcon from "@mui/icons-material/Menu";
+import { GiHamburgerMenu} from "react-icons/gi";
 
 const Navbar = () => {
   const [openedNav, setOpenedNav] = useState();
   const [openDrop, setOpenDrop] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
 
   const navDrop = () => {
     setOpenedNav(!openedNav);
@@ -21,10 +22,6 @@ const Navbar = () => {
     setOpenDrop(null);
   };
 
-  const menuIcon = () => {
-    setMenuOpen(!menuOpen)
-  }
-
   return (
     <div className="nav">
       <div className="navContent">
@@ -34,12 +31,12 @@ const Navbar = () => {
               <img src="https://truckx.com/wp-content/uploads/2019/08/pure-blue-logo.png" />
             </a>
           </div>
-          <li className="dropdown-container">
+<div className={openMenu ? "mobileView" : "webView"} >
+<li className="dropdown-container">
             <a className="product" onClick={navDrop}>
               Products
               <KeyboardArrowDownIcon style={{ marginBottom: "-7px" }} />
             </a>
-            {/* {openedNav && ( */}
             <div className="dropdown-content">
               <a href="#cloudDashcam">Cloud Dashcam</a>
               <a
@@ -83,8 +80,7 @@ const Navbar = () => {
                 <a href="#t&h">Temperature & Humidity</a>
                 <a href="#DoorSensors">Door Sensor</a>
               </div>
-            )}
-            {/* )} */}
+             )} 
           </li>
           <li className="dropdown-container">
             <a>
@@ -110,13 +106,16 @@ const Navbar = () => {
           <li className="dropdown-container">
             <a href="#contact">Contact</a>
           </li>
+          </div>
+
+         {/*  */}
           <button className="loginButton">
             <a href="/login" target="_blank">
               LOGIN
             </a>
           </button>
-          <div className="menuIcon" onClick={menuIcon}>
-            <MenuIcon />
+          <div className="menuIcon" onClick={() => setOpenMenu(!openMenu)}>
+            <GiHamburgerMenu />
           </div>
         </ul>
       </div>
