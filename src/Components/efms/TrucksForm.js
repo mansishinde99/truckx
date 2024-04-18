@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "../../Styles/efmsStyle/TrucksForm.css";
-import { BsFillTrashFill } from "react-icons/bs";
-import { BsFillPencilFill } from "react-icons/bs";
+import { BsFillTrashFill, BsFillPencilFill } from "react-icons/bs";
 
 const TrucksForm = () => {
   const [openForm, setOpenForm] = useState(false);

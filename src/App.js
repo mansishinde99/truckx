@@ -1,6 +1,7 @@
 import "./App.css";
 import Main from "./Main";
 import Login from "./Components/Login";
+import Login2 from "./Components/Login2";
 import Signup from "./Components/Signup";
 import Dashboard from "./Components/efms/Dashboard";
 
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Main />} />
           <Route exact path="/login" element={<Login />} />
+          <Route exact path="/login2" element={<Login2/>}/>
           <Route exact path="/signup" element={<Signup/>} />
           <Route exact path="/efms/dashboard" element={<Dashboard/>}/>  
           <Route exact path="/efms/dashboard2" element={<Dashboard2/>}/>

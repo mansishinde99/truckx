@@ -111,7 +111,7 @@ const Navbar = () => {
 
           {/*  */}
           <button className="loginButton">
-            <a href="/login" target="_blank">
+            <a href="/login2" target="_blank">
               LOGIN
             </a>
           </button>

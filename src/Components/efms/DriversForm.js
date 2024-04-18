@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "../../Styles/efmsStyle/DriversForm.css";
-import { BsFillTrashFill } from "react-icons/bs";
-import { BsFillPencilFill } from "react-icons/bs";
+import { BsFillTrashFill, BsFillPencilFill } from "react-icons/bs";
 
 const DriversForm = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,39 +9,43 @@ const DriversForm = () => {
     firstName: "",
     lastName: "",
     email: "",
-    cell: "",
+    phone: "",
     license: "",
   };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [editing, setEditing] = useState(false);
 
+
   const openForm = (e) => {
     e.preventDefault();
     setIsOpen(true);
   };
+
 
   const closeForm = (e) => {
     e.preventDefault();
     setIsOpen(false);
   };
 
+
   const submitForm = (e) => {
     e.preventDefault();
 
-    const errors = validate(formValues);
-    if (Object.keys(errors).length > 0) {
-      setFormErrors(errors);
+    const errors = validate(formValues); // Validate form values
+    if (Object.keys(errors).length > 0) { // If there are validation errors
+      setFormErrors(errors);  // Set formErrors state with validation errors
       return;
     }
 
-    const newData = { ...formValues };
+    const newData = { ...formValues }; // Copy formValues into newData
+    console.log(newData)
 
-    if (editing !== false) {
+    if (editing !== false) { // If in edit mode, update the data at editing
       const updatedData = [...info];
       updatedData[editing] = newData;
-      setInfo(updatedData);
-      setEditing(false);
+      setInfo(updatedData);  
+      setEditing(false);  // Exit editing after editing
     } else {
       setInfo([...info, newData]);
     }
@@ -50,6 +53,9 @@ const DriversForm = () => {
     setIsOpen(false);
     setFormValues(initialValues);
   };
+
+
+
 
   const validate = (values) => {
     const errors = {};
@@ -61,15 +67,22 @@ const DriversForm = () => {
     }
     if (!values.email) {
       errors.email = "Email is Required";
+    } else if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{1,4}$/.test(values.email)) {
+      errors.email = "Invalid Email Format";
     }
-    if (!values.cell) {
-      errors.cell = "Cell is Required";
+    if (!values.phone) {
+      errors.phone = "Phone is Required";
     }
+    else if (values.phone.length !== 10){
+      errors.phone = "Enter Valid Phone Number";
+    } 
     if (!values.license) {
       errors.license = "License is Required";
     }
     return errors;
   };
+
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -77,25 +90,28 @@ const DriversForm = () => {
     setFormErrors({ ...formErrors, [name]: "" });
   };
 
+
   const cancelEdit = (e) => {
     e.preventDefault();
     setFormValues(initialValues);
     setIsOpen(false); // Close the form
   };
 
+
   const handleCancel = (e) => {
     closeForm(e);
     cancelEdit(e);
   };
 
+  
   const deleteData = (i) => {
-    const newInfo = [...info]; // Create a copy of the info array
-    newInfo.splice(i, 1); // Remove one element at the specified (i)index from the copied array
-    setInfo(newInfo); // Update the state with the modified array (one element removed)
+    const newInfo = [...info]; // Create a copy of info array
+    newInfo.splice(i, 1); // From index(i) it starts removing the element and 1 element is to be removed
+    setInfo(newInfo); // Update the state with the modified array
   };
 
   const editData = (i) => {
-    const dataEdit = info[i];
+    const dataEdit = info[i]; 
     setFormValues(dataEdit);
     setIsOpen(true);
     setEditing(i); // Set the editing index to the index being edited
@@ -116,7 +132,6 @@ const DriversForm = () => {
                   First Name <span className="imp">*</span>
                 </p>
                 <input
-                  placeholder="First Name"
                   name="firstName"
                   value={formValues.firstName}
                   onChange={handleChange}
@@ -130,7 +145,6 @@ const DriversForm = () => {
                   Last Name <span className="imp">*</span>
                 </p>
                 <input
-                  placeholder="Last Name"
                   name="lastName"
                   value={formValues.lastName}
                   onChange={handleChange}
@@ -146,9 +160,7 @@ const DriversForm = () => {
                   Email Id <span className="imp">*</span>
                 </p>
                 <input
-                  placeholder="Email Id"
                   name="email"
-                  type="email"
                   value={formValues.email}
                   onChange={handleChange}
                 />
@@ -158,17 +170,16 @@ const DriversForm = () => {
               </div>
               <div className="filling">
                 <p>
-                  Cell <span className="imp">*</span>
+                  Phone <span className="imp">*</span>
                 </p>
                 <input
-                  placeholder="Phone Number"
-                  name="cell"
+                  name="phone"
                   type="number"
-                  value={formValues.cell}
+                  value={formValues.phone}
                   onChange={handleChange}
                 />
-                {formErrors.cell && (
-                  <p style={{ color: "red", fontSize: ".9vw" }} className="error">{formErrors.cell}</p>
+                {formErrors.phone && (
+                  <p style={{ color: "red", fontSize: ".9vw" }} className="error">{formErrors.phone}</p>
                 )}
               </div>
             </div>
@@ -178,7 +189,6 @@ const DriversForm = () => {
                   License <span className="imp">*</span>
                 </p>
                 <input
-                  placeholder="License No."
                   name="license"
                   value={formValues.license}
                   onChange={handleChange}
@@ -220,7 +230,7 @@ const DriversForm = () => {
                   <td>{val.firstName}</td>
                   <td>{val.lastName}</td>
                   <td>{val.email}</td>
-                  <td>{val.cell}</td>
+                  <td>{val.phone}</td>
                   <td>{val.license}</td>
                   <td className="ed-buttons">
                     <button className="edit-button" onClick={() => editData(i)}>
@@ -242,5 +252,4 @@ const DriversForm = () => {
     </div>
   );
 };
-
 export default DriversForm;
