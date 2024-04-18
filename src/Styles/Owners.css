@@ -44,7 +44,7 @@
   background-color: #fff;
 }
 
-@media (max-width: 767px){
+@media (min-width: 350px) and (max-width: 767px) {
   .image-slider h1 {
     text-align: center;
     color: #344168;

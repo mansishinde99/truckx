@@ -1,6 +1,6 @@
 .white-bg {
   background-color: #f8f8f8;
-  height: 18vw;
+  height: 21vw;
 }
 
 .blue-head {
@@ -53,12 +53,18 @@
   background-color: #f8f8f8;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 350px) and (max-width: 767px) {
+
+  .white-bg {
+    background-color: #f8f8f8;
+    height: 40vw;
+  }
+
   .blue-head {
     color: #344168;
     text-align: center;
     font-size: 7vw;
-    padding-top: 2vw;
+    padding-top: 5vw;
     padding-bottom: 3vw;
   }
 
@@ -70,7 +76,7 @@
   }
 
   .tune {
-    margin: 20vw 10vw;
+    margin: 10vw;
   }
 
   .tune-text {

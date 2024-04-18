@@ -23,7 +23,7 @@
     padding-bottom: 5vw;
 }
 
-@media (max-width:767px){
+@media (min-width: 320px) and (max-width: 767px) {
     .trust{
         margin: 16vw;
         margin-bottom: 1vw;

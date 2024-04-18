@@ -1,57 +1,108 @@
-.navbar{
-    display: flex;
-    padding: 1vw;
-    justify-content: space-between;
+.navbar {
+  display: flex;
+  padding: 1vw;
+  justify-content: space-between;
+  background-color: #ecebeb;
 }
 
 .navbar .left {
-    display: flex;
+  display: flex;
 }
 
-.navbar .left .truck-logo{
-    width: 8vw;
-    height: 6vh;
+.navbar .left .truck-logo {
+  width: 8vw;
+  height: 6vh;
 }
 
-.navbar .dash-board{
-    margin: 1vw 3vw;
-    color: rgb(101, 101, 101);
-    font-size: 1.3vw;
-    font-weight: 600;
-    background-color: transparent;
+.navbar .dash-board {
+  margin: 1vw 3vw;
+  color: rgb(101, 101, 101);
+  font-size: 1.3vw;
+  font-weight: 600;
+  background-color: transparent;
 }
 
-.navbar .right{
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    gap: 1vw;
+.navbar .right {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: 1vw;
 }
 
-.navbar .right .demo{
-    margin-top: 1vw;
-    color: rgb(101, 101, 101);
+.navbar .right .demo {
+  margin-top: 1vw;
+  color: rgb(101, 101, 101);
+  cursor: pointer;
 }
 
-.navbar .profile{
-    width: 3.5vw;
-    height: 3.5vw;
-    border-radius: 2vw;
+.navbar .right .dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  z-index: 1;
+  margin-top: 3.5vw;
+  width: 13vw;
 }
 
-.dashboard2 .data-buttons{
-    display: flex;
-    gap: 7vw;
-    margin: 4vw;
+.navbar .right:hover .dropdown-content  {
+    display: block;
+  }
+
+.navbar .right .dropdown-imgtext{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid;
+  border-radius: .8vw;
+  background-color: white;
+  margin-top: 1vw;
 }
 
-.data-buttons button{
-    cursor: pointer;
-    width: 16vw;
-    padding: 2vw;
-    border: none;
-    border-radius: 1vw;
-    background-color: #1990FF;
-    color: #fff;
-    font-size: 1.5vw;
+.navbar .right .dropdown-imgtext img {
+  width: 1.3vw;
+  margin: 0 0.5vw;
+}
+
+.navbar .right .dropdown-content .dropdown-imgtext a {
+  color: #EB5756;
+  font-size: 1.3vw;
+  font-weight: 500;
+  padding: 8px 0;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.navbar .profile {
+  width: 3.5vw;
+  height: 3.5vw;
+  border-radius: 2vw;
+}
+
+.dashboard2 .data{
+  background-image: 
+  url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5mtRPTWWnjEwVlxEh0COzOWj5fsSISWTXxg&s");
+    height: 38.3vw;
+    width: 96%;
+    padding: 4vw 0 0 4vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.dashboard2 .data .data-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 7vw;
+}
+
+.data-buttons button {
+  cursor: pointer;
+  width: 16vw;
+  padding: 2vw;
+  border: none;
+  border-radius: 1vw;
+  background-color: #1990ff;
+  color: #fff;
+  font-size: 1.5vw;
 }

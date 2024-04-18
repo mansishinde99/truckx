@@ -179,3 +179,48 @@ table tbody tr:hover{
 .delete-button:hover, .edit-button:hover{
   transform: scale(1.2);
 }
+
+@media (min-width: 320px) and (max-width: 767px){
+  .add-drivers {
+    background-color: #1990ff;
+    color: white;
+    border: none;
+    padding: 3vw;
+    margin: 3vw;
+    cursor: pointer;
+    font-size: 5vw;
+    font-weight: 600;
+    border-radius: 0.3vw;
+  }
+
+  .form-popup {
+    position: absolute;
+    background: #ffffff;
+    padding: 2vw;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    border-radius: 1vw;
+    margin: 1vw;
+    width: 90%;
+  }
+
+  form .content{
+    display: block;
+  }
+
+  .form-popup form .filling input {
+    width: 55vw;
+    height: 7vw;
+    padding: 0vw;
+    border: none;
+    border-bottom: 1px solid lightgray;
+}
+
+form .cancel-button{
+  margin: 1vw 0;
+}
+
+form .submit-button{
+  margin: 1vw 0;
+}
+}
